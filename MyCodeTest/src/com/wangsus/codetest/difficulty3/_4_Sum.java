@@ -7,7 +7,7 @@ package com.wangsus.codetest.difficulty3;
  * @author Su
  *
  */
-public class _4Sum {
+public class _4_Sum {
 
 	/**
 	 * @param args
