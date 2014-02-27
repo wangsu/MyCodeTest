@@ -5,7 +5,10 @@ package com.wangsus.codetest.difficulty4;
 
 /**
  * @author Su
- *
+ * 
+ *         Divide two integers without using multiplication, division and mod
+ *         operator.
+ * 
  */
 public class Divide_Two_Integers {
 
@@ -17,4 +20,10 @@ public class Divide_Two_Integers {
 
 	}
 
+	public class Solution {
+		public int divide(int dividend, int divisor) {
+			return 0;
+
+		}
+	}
 }

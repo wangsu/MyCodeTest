@@ -5,7 +5,10 @@ package com.wangsus.codetest.difficulty4;
 
 /**
  * @author Su
- *
+ * 
+ *         Implement int sqrt(int x).
+ * 
+ *         Compute and return the square root of x.
  */
 public class Sqrt_x {
 
@@ -17,4 +20,9 @@ public class Sqrt_x {
 
 	}
 
+	public class Solution {
+		public int sqrt(int x) {
+			return 0;
+		}
+	}
 }
