@@ -15,10 +15,12 @@ package com.wangsus.codetest.difficulty2;
  * 
  *         You may assume that each input would have exactly one solution.
  * 
- *         Input: numbers={2, 7, 11, 15}, target=9 Output: index1=1, index2=2
+ *         Input: numbers={2, 7, 11, 15}, target=9
+ * 
+ *         Output: index1=1, index2=2
  */
 public class Two_Sum {
-	
+
 	/**
 	 * @param args
 	 */
@@ -26,12 +28,9 @@ public class Two_Sum {
 
 	}
 
-	/**
-	 * @param numbers
-	 * @param target
-	 * @return
-	 */
-	public int[] twoSum(int[] numbers, int target) {
-		return null;
+	public class Solution {
+		public int[] twoSum(int[] numbers, int target) {
+			return null;
+		}
 	}
 }
