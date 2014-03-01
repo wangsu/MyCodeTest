@@ -5,6 +5,7 @@ package com.wangsus.codetest.datastructure;
  * Definition for an interval.
  * 
  * 
+ * 
 public class Interval {
 	int start;
 	int end;
