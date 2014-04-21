@@ -1,7 +1,7 @@
-/**
- * 
- */
 package com.wangsus.codetest.difficulty1;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import com.wangsus.codetest.datastructure.TreeNode;
 
@@ -42,6 +42,42 @@ public class Path_Sum {
 	 */
 	public class Solution {
 	    public boolean hasPathSum(TreeNode root, int sum) {
+	    	//try depth first search
+	    	List<TreeNode> dfs = new ArrayList<TreeNode>();
+	    	List<Integer> cSum = new ArrayList<Integer>();
+	    	if(root==null){
+	    		return false;
+	    	}
+	    	if(root.val==sum&&root.left==null&&root.right==null){
+	    		return true;
+	    	}
+	    	if(root.left!=null){
+	    		dfs.add(root.left);
+	    		cSum.add(root.val+root.left.val);
+	    	}
+	    	if(root.right!=null){
+	    		dfs.add(root.right);
+	    		cSum.add(root.val+root.right.val);
+	    	}
+	    	while(!dfs.isEmpty()){
+	    		TreeNode current = dfs.get(0);	    		
+	    		int currentSum = cSum.get(0);
+	    		dfs.remove(0);
+	    		cSum.remove(0);
+	    		if(current.left==null&&current.right==null){
+	    			if(currentSum==sum){
+	    				return true;
+	    			}
+	    		}
+	    		if(current.left!=null){
+		    		dfs.add(0,current.left);
+		    		cSum.add(0,current.val+current.left.val);
+		    	}
+		    	if(current.right!=null){
+		    		dfs.add(0,current.right);
+		    		cSum.add(0,current.val+current.right.val);
+		    	}
+	    	}
 	        return false;
 	    }
 	}
