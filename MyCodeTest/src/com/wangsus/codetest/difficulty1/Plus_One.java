@@ -21,9 +21,24 @@ public class Plus_One {
 		// TODO Auto-generated method stub
 
 	}
+
 	public class Solution {
-	    public int[] plusOne(int[] digits) {
-	        return null;
-	    }
+		public int[] plusOne(int[] digits) {
+			boolean needUp = false;
+			for (int i = 0; i < digits.length; i++) {
+				if (i == 0) {
+					digits[i] = digits[i] + 1;
+				}
+				if (needUp) {
+					digits[i] = digits[i] + 1;
+					needUp = false;
+				}
+				if (digits[i] >= 10) {
+					digits[i] = digits[i]-10;
+					needUp = true;
+				}
+			}
+			return digits;
+		}
 	}
 }
