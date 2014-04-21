@@ -20,7 +20,7 @@ public class Balanced_Binary_Tree {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		
 	}
 	/**
 	 * Definition for binary tree
@@ -33,8 +33,24 @@ public class Balanced_Binary_Tree {
 	 */
 	public class Solution {
 	    public boolean isBalanced(TreeNode root) {
-	    	//test
-	        return false;
+	    	//Breadth-First-Search
+	    	if(root==null){
+	    		return true;
+	    	}else{
+	    		if(Math.abs(getDepth(root.left)-getDepth(root.right))>1){
+	    			return false;
+	    		}else{
+	    			return true;
+	    		}
+	    	}
+	    }
+	    
+	    private int getDepth(TreeNode root){
+	    	if ( root == null )
+	            return 0;
+	        return 1 + getDepth(root.left) + getDepth(root.right);
 	    }
 	}
+	
+
 }
