@@ -55,10 +55,8 @@ public class Plus_One {
 				// Arrays.copyOfRange accepts the original array and to and from
 				// index to truncate the array.
 
-				digits = Arrays.copyOf(digits, digits.length + 1);
-				int temp = 0;
-				for (int i = 0; i < digits.length - 1; i++) {
-					temp = digits[i + 1];
+				digits = Arrays.copyOf(digits, digits.length + 1);				
+				for (int i = 0; i < digits.length - 1; i++) {					
 					digits[i + 1] = digits[i];
 					if (i == 0) {
 						digits[0] = 1;
