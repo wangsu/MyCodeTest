@@ -24,12 +24,22 @@ public class Length_of_Last_Word {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		String s = "Hello World";
+		Solution s1 = new Solution();
+		System.out.println(s1.lengthOfLastWord(s));
 	}
 
-	public class Solution {
+	public static class Solution {
 		public int lengthOfLastWord(String s) {
-			return 0;
+			if(s.isEmpty()){
+				return 0;
+			}else{
+				if(!s.contains(" ")){
+					return s.length();
+				}else{
+					return s.length()-s.lastIndexOf(" ")-1;
+				}
+			}
 		}
 	}
 }
