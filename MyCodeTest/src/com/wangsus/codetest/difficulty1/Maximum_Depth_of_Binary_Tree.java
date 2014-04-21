@@ -32,7 +32,15 @@ public class Maximum_Depth_of_Binary_Tree {
 	 */
 	public class Solution {
 	    public int maxDepth(TreeNode root) {
-	        return 0;
+	        return getDepth(root);
+	    }
+	    
+	    private int getDepth(TreeNode node){
+	    	if(node==null){
+	    		return 0;
+	    	}else{
+	    		return 1+Math.max(getDepth(node.left),getDepth(node.right));
+	    	}
 	    }
 	}
 }
