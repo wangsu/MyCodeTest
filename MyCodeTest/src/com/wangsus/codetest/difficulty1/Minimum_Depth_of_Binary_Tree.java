@@ -22,26 +22,41 @@ public class Minimum_Depth_of_Binary_Tree {
 		// TODO Auto-generated method stub
 
 	}
+
 	/**
-	 * Definition for binary tree
-	 * public class TreeNode {
-	 *     int val;
-	 *     TreeNode left;
-	 *     TreeNode right;
-	 *     TreeNode(int x) { val = x; }
-	 * }
+	 * Definition for binary tree public class TreeNode { int val; TreeNode
+	 * left; TreeNode right; TreeNode(int x) { val = x; } }
 	 */
-	public class Solution {		
-	    public int minDepth(TreeNode root) {
-	    	if(root==null){
-	    		return 0;
-	    	}else if(root.left==null&&root.right==null){
-	    		return 1;
-	    	}else if(root.left==null||root.right==null){
-	    		return 2;
-	    	}else{
-	    		return 1+Math.min(minDepth(root.left), minDepth(root.right));
-	    	}	        
-	    }
+	public class Solution {
+		public int minDepth(TreeNode root) {
+			// need to do depth first search.
+			if (root == null) {
+				return 0;
+			} else {
+				int left = getDepth(root.left);
+				int right = getDepth(root.right);
+				if (left != 0 && right != 0) {
+					if (left < right) {
+						return 1 + left;
+					} else {
+						return 1 + right;
+					}
+				}else{
+					if(left==0){
+						return 1 + right;
+					}else{
+						return 1 + left;
+					}
+				}
+			}
+		}
+
+		private int getDepth(TreeNode node) {
+			if (node == null) {
+				return 0;
+			} else {
+				return 1 + Math.max(getDepth(node.left), getDepth(node.right));
+			}
+		}
 	}
 }
