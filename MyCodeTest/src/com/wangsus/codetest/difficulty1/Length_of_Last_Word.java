@@ -31,9 +31,10 @@ public class Length_of_Last_Word {
 
 	public static class Solution {
 		public int lengthOfLastWord(String s) {
+			s = s.trim();
 			if(s.isEmpty()){
 				return 0;
-			}else{
+			}else{				
 				if(!s.contains(" ")){
 					return s.length();
 				}else{
