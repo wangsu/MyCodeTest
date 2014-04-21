@@ -21,10 +21,10 @@ public class Plus_One {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] test = {9};
+		int[] test = { 9 };
 		Solution s = new Solution();
 		int[] result = s.plusOne(test);
-		for(int value :result){
+		for (int value : result) {
 			System.out.println(value);
 		}
 	}
@@ -32,8 +32,8 @@ public class Plus_One {
 	public static class Solution {
 		public int[] plusOne(int[] digits) {
 			boolean needUp = false;
-			for (int i = 0; i < digits.length; i++) {
-				if (i == 0) {
+			for (int i = digits.length - 1; i >= 0; i--) {
+				if (i == digits.length - 1) {
 					digits[i] = digits[i] + 1;
 				}
 				if (needUp) {
@@ -56,7 +56,14 @@ public class Plus_One {
 				// index to truncate the array.
 
 				digits = Arrays.copyOf(digits, digits.length + 1);
-				digits[digits.length - 1] = 1;
+				int temp = 0;
+				for (int i = 0; i < digits.length - 1; i++) {
+					temp = digits[i + 1];
+					digits[i + 1] = digits[i];
+					if (i == 0) {
+						digits[0] = 1;
+					}
+				}
 			}
 			return digits;
 		}
