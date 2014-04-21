@@ -48,19 +48,10 @@ public class Path_Sum {
 	    	if(root==null){
 	    		return false;
 	    	}
-	    	if(root.val==sum&&root.left==null&&root.right==null){
-	    		return true;
-	    	}
-	    	if(root.left!=null){
-	    		dfs.add(root.left);
-	    		cSum.add(root.val+root.left.val);
-	    	}
-	    	if(root.right!=null){
-	    		dfs.add(root.right);
-	    		cSum.add(root.val+root.right.val);
-	    	}
+    		dfs.add(root);
+    		cSum.add(root.val);	    	
 	    	while(!dfs.isEmpty()){
-	    		TreeNode current = dfs.get(0);	    		
+	    		TreeNode current = dfs.get(0);
 	    		int currentSum = cSum.get(0);
 	    		dfs.remove(0);
 	    		cSum.remove(0);
@@ -69,13 +60,13 @@ public class Path_Sum {
 	    				return true;
 	    			}
 	    		}
-	    		if(current.left!=null){
-		    		dfs.add(0,current.left);
-		    		cSum.add(0,current.val+current.left.val);
-		    	}
 		    	if(current.right!=null){
 		    		dfs.add(0,current.right);
-		    		cSum.add(0,current.val+current.right.val);
+		    		cSum.add(0,currentSum+current.right.val);
+		    	}
+	    		if(current.left!=null){
+		    		dfs.add(0,current.left);
+		    		cSum.add(0,currentSum+current.left.val);
 		    	}
 	    	}
 	        return false;
