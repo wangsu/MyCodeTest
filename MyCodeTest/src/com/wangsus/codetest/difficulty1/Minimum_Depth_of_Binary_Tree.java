@@ -3,6 +3,9 @@
  */
 package com.wangsus.codetest.difficulty1;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.wangsus.codetest.datastructure.TreeNode;
 
 /**
@@ -29,34 +32,39 @@ public class Minimum_Depth_of_Binary_Tree {
 	 */
 	public class Solution {
 		public int minDepth(TreeNode root) {
-			// need to do depth first search.
+			// need to do Breadth-first search!!!
+			List<TreeNode> nextNodes = new ArrayList<TreeNode>();
+			List<Integer> distanceFromRoot = new ArrayList<Integer>();
 			if (root == null) {
 				return 0;
-			} else {
-				int left = getDepth(root.left);
-				int right = getDepth(root.right);
-				if (left != 0 && right != 0) {
-					if (left < right) {
-						return 1 + left;
-					} else {
-						return 1 + right;
+			}
+			if (root.left != null) {
+				nextNodes.add(root.left);
+				distanceFromRoot.add(2);
+			}
+			if (root.right != null) {
+				nextNodes.add(root.right);
+				distanceFromRoot.add(2);
+			}
+			while (!nextNodes.isEmpty()) {
+				TreeNode next = nextNodes.get(0);
+				int distance = distanceFromRoot.get(0);
+				if (next.left == null && next.right == null) {
+					return distance;
+				} else {
+					nextNodes.remove(0);
+					distanceFromRoot.remove(0);
+					if (next.left != null) {
+						nextNodes.add(next.left);
+						distanceFromRoot.add(distance + 1);
 					}
-				}else{
-					if(left==0){
-						return 1 + right;
-					}else{
-						return 1 + left;
+					if (next.right != null) {
+						nextNodes.add(next.right);
+						distanceFromRoot.add(distance + 1);
 					}
 				}
 			}
-		}
-
-		private int getDepth(TreeNode node) {
-			if (node == null) {
-				return 0;
-			} else {
-				return 1 + Math.max(getDepth(node.left), getDepth(node.right));
-			}
+			return 1;
 		}
 	}
 }
