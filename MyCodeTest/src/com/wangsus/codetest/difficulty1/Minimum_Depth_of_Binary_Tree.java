@@ -32,8 +32,17 @@ public class Minimum_Depth_of_Binary_Tree {
 	 * }
 	 */
 	public class Solution {
+		int minDepth = 0;
 	    public int minDepth(TreeNode root) {
-	        return 0;
+	    	if(root==null){
+	    		return minDepth;
+	    	}else{
+	    		minDepth++;
+	    		minDepth(root.left);
+	    		minDepth(root.right);
+	    	}
+	    	return minDepth;
+	        
 	    }
 	}
 }
