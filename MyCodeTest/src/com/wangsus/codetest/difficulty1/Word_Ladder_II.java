@@ -41,6 +41,10 @@ public class Word_Ladder_II {
 	public class Solution {
 		public ArrayList<ArrayList<String>> findLadders(String start,
 				String end, HashSet<String> dict) {
+			//question?
+			//could repeat? should not. otherwise no meaning.
+			//
+			
 			return null;
 		}
 	}
