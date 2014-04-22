@@ -73,5 +73,25 @@ public class Remove_Duplicates_from_Sorted_Array {
 			return 0;
 		}
 
+		public int removeDuplicates2(int[] A) {
+			if (A == null) {
+				return 0;
+			}
+			int n = A.length;
+			if (n <= 1) {
+				return n;
+			}
+			int i = 0;
+			for (int j = 1; j < n; ++j) {
+				if (A[j] != A[i]) {
+					++i;
+					if (i != j) {
+						A[i] = A[j];
+					}
+				}
+			}
+			return i + 1;
+		}
 	}
+
 }
