@@ -39,7 +39,27 @@ public class Remove_Duplicates_from_Sorted_List {
 	 */
 	public class Solution {
 	    public ListNode deleteDuplicates(ListNode head) {
-	        return null;
+	    	if(head==null){
+	    		return null;
+	    	}else{
+	    		if(head.next==null){
+	    			return head;
+	    		}else{
+	    			ListNode slow = head;
+	    			ListNode fast = head.next;
+	    			while(fast!=null){
+	    				if(slow.val==fast.val){
+	    					fast = fast.next;
+	    				}else{
+	    					slow.next = fast;
+	    					slow = slow.next;
+	    					fast = fast.next;	    							
+	    				}
+	    			}
+	    			slow.next=null;
+	    		}
+	    		return head;
+	    	}
 	    }
 	}
 }
