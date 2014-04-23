@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.wangsus.codetest.difficulty1;
+package com.wangsus.codetest.difficulty4;
 
 import java.util.ArrayList;
 import java.util.HashMap;
