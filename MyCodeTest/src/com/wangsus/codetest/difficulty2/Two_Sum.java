@@ -25,7 +25,7 @@ public class Two_Sum {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-
+		//test
 	}
 
 	public class Solution {
