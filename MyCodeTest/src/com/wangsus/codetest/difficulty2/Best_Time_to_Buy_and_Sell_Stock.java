@@ -36,14 +36,14 @@ public class Best_Time_to_Buy_and_Sell_Stock {
 			}
 			int minD = 0;
 			int maxProfit = 0;
-			int buy, sell = 0;
+//			int buy, sell = 0;
 			for (int i = 0; i < prices.length; i++) {
 				if (prices[i] < prices[minD])
 					minD = i;
 				int diff = prices[i] - prices[minD];
 				if (diff > maxProfit) {
-					buy = minD;
-					sell = i;
+//					buy = minD;
+//					sell = i;
 					maxProfit = diff;
 				}
 			}
